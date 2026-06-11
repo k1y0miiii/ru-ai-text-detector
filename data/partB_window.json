@@ -1,0 +1,212 @@
+{
+  "verdict_thr": {
+    "v1": 0.86,
+    "v2": 0.9
+  },
+  "highlight_thr": {
+    "v1": 0.6,
+    "v2": 0.55
+  },
+  "batch": {
+    "ВЕРДИКТНЫЙ (обвинение)|isolated|v1": {
+      "recall": 0.4166666666666667,
+      "fpr": 0.041666666666666664,
+      "ai_total": 60,
+      "ai_flag": 25,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 4
+    },
+    "ВЕРДИКТНЫЙ (обвинение)|isolated|v2": {
+      "recall": 0.5,
+      "fpr": 0.020833333333333332,
+      "ai_total": 60,
+      "ai_flag": 30,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 2
+    },
+    "ВЕРДИКТНЫЙ (обвинение)|300|v1": {
+      "recall": 0.03333333333333333,
+      "fpr": 0.0,
+      "ai_total": 60,
+      "ai_flag": 2,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 0
+    },
+    "ВЕРДИКТНЫЙ (обвинение)|300|v2": {
+      "recall": 0.0,
+      "fpr": 0.0,
+      "ai_total": 60,
+      "ai_flag": 0,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 0
+    },
+    "ВЕРДИКТНЫЙ (обвинение)|150|v1": {
+      "recall": 0.03333333333333333,
+      "fpr": 0.0,
+      "ai_total": 60,
+      "ai_flag": 2,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 0
+    },
+    "ВЕРДИКТНЫЙ (обвинение)|150|v2": {
+      "recall": 0.03333333333333333,
+      "fpr": 0.0,
+      "ai_total": 60,
+      "ai_flag": 2,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 0
+    },
+    "ВЕРДИКТНЫЙ (обвинение)|75|v1": {
+      "recall": 0.03333333333333333,
+      "fpr": 0.0,
+      "ai_total": 60,
+      "ai_flag": 2,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 0
+    },
+    "ВЕРДИКТНЫЙ (обвинение)|75|v2": {
+      "recall": 0.25,
+      "fpr": 0.010416666666666666,
+      "ai_total": 60,
+      "ai_flag": 15,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 1
+    },
+    "ПОДСВЕТКА карты TUI|isolated|v1": {
+      "recall": 0.7333333333333333,
+      "fpr": 0.14583333333333334,
+      "ai_total": 60,
+      "ai_flag": 44,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 14
+    },
+    "ПОДСВЕТКА карты TUI|isolated|v2": {
+      "recall": 0.8,
+      "fpr": 0.16666666666666666,
+      "ai_total": 60,
+      "ai_flag": 48,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 16
+    },
+    "ПОДСВЕТКА карты TUI|300|v1": {
+      "recall": 0.08333333333333333,
+      "fpr": 0.010416666666666666,
+      "ai_total": 60,
+      "ai_flag": 5,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 1
+    },
+    "ПОДСВЕТКА карты TUI|300|v2": {
+      "recall": 0.23333333333333334,
+      "fpr": 0.03125,
+      "ai_total": 60,
+      "ai_flag": 14,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 3
+    },
+    "ПОДСВЕТКА карты TUI|150|v1": {
+      "recall": 0.08333333333333333,
+      "fpr": 0.010416666666666666,
+      "ai_total": 60,
+      "ai_flag": 5,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 1
+    },
+    "ПОДСВЕТКА карты TUI|150|v2": {
+      "recall": 0.38333333333333336,
+      "fpr": 0.0625,
+      "ai_total": 60,
+      "ai_flag": 23,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 6
+    },
+    "ПОДСВЕТКА карты TUI|75|v1": {
+      "recall": 0.23333333333333334,
+      "fpr": 0.03125,
+      "ai_total": 60,
+      "ai_flag": 14,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 3
+    },
+    "ПОДСВЕТКА карты TUI|75|v2": {
+      "recall": 0.6166666666666667,
+      "fpr": 0.16666666666666666,
+      "ai_total": 60,
+      "ai_flag": 37,
+      "ai_insuff": 0,
+      "hum_total": 96,
+      "hum_flag": 16
+    }
+  },
+  "real": {
+    "mixed|300|v1": {
+      "ai_long": "0/2",
+      "ai_short": "0/1",
+      "hum_fp": "0/5"
+    },
+    "mixed|300|v2": {
+      "ai_long": "0/2",
+      "ai_short": "0/1",
+      "hum_fp": "0/5"
+    },
+    "mixed|150|v1": {
+      "ai_long": "0/2",
+      "ai_short": "0/1",
+      "hum_fp": "0/5"
+    },
+    "mixed|150|v2": {
+      "ai_long": "0/2",
+      "ai_short": "0/1",
+      "hum_fp": "0/5"
+    },
+    "mixed|75|v1": {
+      "ai_long": "0/2",
+      "ai_short": "0/1",
+      "hum_fp": "0/5"
+    },
+    "mixed|75|v2": {
+      "ai_long": "0/2",
+      "ai_short": "0/1",
+      "hum_fp": "0/5"
+    },
+    "diploma|300|v1": {
+      "hum_fp": "0/21",
+      "fpr": 0.0
+    },
+    "diploma|300|v2": {
+      "hum_fp": "0/21",
+      "fpr": 0.0
+    },
+    "diploma|150|v1": {
+      "hum_fp": "0/21",
+      "fpr": 0.0
+    },
+    "diploma|150|v2": {
+      "hum_fp": "0/21",
+      "fpr": 0.0
+    },
+    "diploma|75|v1": {
+      "hum_fp": "0/21",
+      "fpr": 0.0
+    },
+    "diploma|75|v2": {
+      "hum_fp": "1/21",
+      "fpr": 0.047619047619047616
+    }
+  }
+}

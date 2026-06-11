@@ -1,0 +1,26 @@
+{
+  "threshold": 0.9,
+  "base": "cointegrated/rubert-tiny2",
+  "selection": "smallest VAL threshold with FPR<=0.025 (margin under 3% product cap)",
+  "val_fpr": 0.0196,
+  "val_recall": 0.3447,
+  "test_auc": 0.8823,
+  "test_fpr": 0.0226,
+  "test_recall": 0.5433,
+  "holdout_gpt4_recall": 0.4111,
+  "holdout_saiga_recall": 0.8333,
+  "prev_threshold": 0.755,
+  "prev_test_fpr": 0.0451,
+  "note": "Перекалибровка только порога (модель не переобучалась). v2 теперь держит FPR<=3% на test с запасом (0.023) и сохраняет ~3x преимущество над v1 на невиданных генераторах: GPT-4 0.411 vs v1 0.133, saiga 0.833 vs v1 0.222.",
+  "ensemble": {
+    "threshold": 0.65,
+    "selection": "smallest VAL threshold with FPR<=0.025",
+    "val_fpr": 0.0245,
+    "test_fpr": 0.0602,
+    "test_recall": 0.685,
+    "holdout_gpt4_recall": 0.5222,
+    "holdout_saiga_recall": 0.8333,
+    "meets_fpr_cap": false,
+    "note": "ОТКЛОНЁН для прода: на честно подобранном на VAL пороге (FPR 2.5%) ансамбль даёт FPR 6.0% на test — зазор VAL->test слишком велик (усреднение с v1 тащит пограничных людей вверх). Ненадёжен по главному инварианту. В прод идёт чистый v2."
+  }
+}

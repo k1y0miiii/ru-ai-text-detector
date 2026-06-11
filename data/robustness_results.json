@@ -1,0 +1,1853 @@
+{
+  "n": 307,
+  "threshold": 0.86,
+  "recall_before": 0.2964169381107492,
+  "recall_after": 0.19543973941368079,
+  "drop_pp": 10.097719869706841,
+  "flipped_susp_to_human": 36,
+  "median_delta_p": 0.0,
+  "per_text": [
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.6768506686416902,
+      "p_after": 0.6553490189071252
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9048942614662014,
+      "p_after": 0.8765662012626736
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.8902597402597403,
+      "p_after": 0.6876010521821763
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.4632666441871792,
+      "p_after": 0.4632666441871792
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 1.0,
+      "p_after": 0.9603159369359536
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.27153923449346856,
+      "p_after": 0.27153923449346856
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.7964285714285715,
+      "p_after": 0.8763701117149392
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.3125473645747694,
+      "p_after": 0.3125473645747694
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.26943139135621363,
+      "p_after": 0.1699920553853138
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.01873015873015873,
+      "p_after": 0.01873015873015873
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.3258989319304958,
+      "p_after": 0.3172746373020421
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9791389038838947,
+      "p_after": 0.9791389038838947
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.8088593974175037,
+      "p_after": 0.8088593974175037
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.6127144221172779,
+      "p_after": 0.5978021414155236
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9749034749034748,
+      "p_after": 0.9749034749034748
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9642849746298022,
+      "p_after": 0.7863337204800619
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.5075246784867662,
+      "p_after": 0.5064531678084855
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.24819548872180447,
+      "p_after": 0.24819548872180447
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.5793810887839446,
+      "p_after": 0.5793810887839446
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.6830776800163052,
+      "p_after": 0.2916387084293844
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9891891891891891,
+      "p_after": 0.8774102454468086
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9753960857409133,
+      "p_after": 0.9753960857409133
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.5666218592371812,
+      "p_after": 0.17415872205198046
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.5028074235778107,
+      "p_after": 0.20546877378886147
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 1.0,
+      "p_after": 0.3703943151411355
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.8424950528398802,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.35564227642276425,
+      "p_after": 0.45296950651768464
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.6392461987132394,
+      "p_after": 0.5445763349639107
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9036258437538109,
+      "p_after": 0.6363915654238235
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.8409688013136289,
+      "p_after": 0.6856354679802956
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.25181023720349566,
+      "p_after": 0.5793810887839446
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.41612378704432207,
+      "p_after": 0.41612378704432207
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.5156788730889904,
+      "p_after": 0.4875090684296034
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.6061626869588748,
+      "p_after": 0.6116270262081503
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9891891891891891,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.40391722099039173,
+      "p_after": 0.6921134905575133
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9862068965517242,
+      "p_after": 0.9346437346437346
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.4094581448514033,
+      "p_after": 0.47634564092676507
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.3175880149812734,
+      "p_after": 0.3175880149812734
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.777958152958153,
+      "p_after": 0.777958152958153
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.33545645548386027,
+      "p_after": 0.33545645548386027
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9557566339102544,
+      "p_after": 0.914223924568752
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.49031382224963743,
+      "p_after": 0.4284666966107877
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.35012312215052693,
+      "p_after": 0.40371836835251473
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.928017028017028,
+      "p_after": 0.928017028017028
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9891891891891891,
+      "p_after": 0.9891891891891891
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.6024580118608677,
+      "p_after": 0.6024580118608677
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.7614857110485371,
+      "p_after": 0.7642857142857143
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.5327558973370214,
+      "p_after": 0.5379468187052661
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.5412579216285194,
+      "p_after": 0.5138117979581394
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.27200812665442115,
+      "p_after": 0.37848166725165344
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9891891891891891,
+      "p_after": 0.9891891891891891
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.5643348447054425,
+      "p_after": 0.5643348447054425
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.6511567777774337,
+      "p_after": 0.7133172730276371
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.2674132182333059,
+      "p_after": 0.3125473645747694
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.11701222753854332,
+      "p_after": 0.11701222753854332
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.7457975182097689,
+      "p_after": 0.6338340914990344
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 1.0,
+      "p_after": 0.9019594150175149
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.5708790644924466,
+      "p_after": 0.4987758147753557
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 0.7319686411149826
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.5793810887839446,
+      "p_after": 0.21181023720349565
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.4027851335656214,
+      "p_after": 0.2712465515666393
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9891891891891891,
+      "p_after": 0.9749034749034748
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.3125473645747694,
+      "p_after": 0.3125473645747694
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9662260932891191,
+      "p_after": 0.9891891891891891
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.7851045641368222,
+      "p_after": 0.8034749034749034
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 0.9749034749034748
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.702494618078006,
+      "p_after": 0.702494618078006
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.8223776223776224,
+      "p_after": 0.9765311256569262
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.7010959847852914,
+      "p_after": 0.6432059735765714
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.5708790644924466,
+      "p_after": 0.5811354747488569
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.5103038949272041,
+      "p_after": 0.5138117979581394
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 1.0,
+      "p_after": 0.9891891891891891
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.47634564092676507,
+      "p_after": 0.47634564092676507
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.273143570536829,
+      "p_after": 0.7227060521178169
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9370172795564391,
+      "p_after": 0.9891891891891891
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.7921504965622612,
+      "p_after": 0.776923076923077
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.3785513673318551,
+      "p_after": 0.3785513673318551
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9294489294489294,
+      "p_after": 0.5358447213922664
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9137124706356012,
+      "p_after": 0.7542168177749239
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 1.0,
+      "p_after": 0.8375408375408375
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9368082368082368,
+      "p_after": 0.6717280363091603
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.5453907453265605,
+      "p_after": 0.5453907453265605
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9251165065184678,
+      "p_after": 0.6366910303044124
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.7774679568797216,
+      "p_after": 0.7392887911840277
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.8782931886380162,
+      "p_after": 0.9299925023519451
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.15888094427420268,
+      "p_after": 0.17256818930445444
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9235326235326236,
+      "p_after": 0.9235326235326236
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.4634728226880931,
+      "p_after": 0.6293810887839446
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9553160475976263,
+      "p_after": 0.9553160475976263
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9891891891891891,
+      "p_after": 0.6884525479195885
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.8862914862914864,
+      "p_after": 0.8616875720323997
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.8639236242684518,
+      "p_after": 0.6288195815953082
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.6162828966534944,
+      "p_after": 0.6505159150970392
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.7556324110671937,
+      "p_after": 0.7556324110671937
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.6656054291635354,
+      "p_after": 0.6656054291635354
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.7938311688311688,
+      "p_after": 0.7938311688311688
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.20899180901921383,
+      "p_after": 0.31990089992830467
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.914223924568752,
+      "p_after": 0.833020358020358
+    },
+    {
+      "bucket": "A",
+      "generator": "coat_machine",
+      "p_before": 0.9749034749034748,
+      "p_after": 0.9753960857409133
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.9487372667124045,
+      "p_after": 0.928017028017028
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.9571178812953457,
+      "p_after": 0.7890318750551968
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.33603443328550936,
+      "p_after": 0.33603443328550936
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.7597402597402598,
+      "p_after": 0.7597402597402598
+    },
+    {
+      "bucket": "A",
+      "generator": "chatgpt",
+      "p_before": 0.7707219251336899,
+      "p_after": 0.7493433331588413
+    },
+    {
+      "bucket": "A",
+      "generator": "qwen3b",
+      "p_before": 0.6127144221172779,
+      "p_after": 0.35184823848238483
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.2721354404555282,
+      "p_after": 0.38355555555555554
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9338259441707718,
+      "p_after": 0.914223924568752
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9031128134576409,
+      "p_after": 0.7227060521178169
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.44588015726791264,
+      "p_after": 0.4027851335656214
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6293810887839446,
+      "p_after": 0.6293810887839446
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.4201750702024749,
+      "p_after": 0.27758801498127345
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.928017028017028,
+      "p_after": 0.9206577206577207
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6775173227185611,
+      "p_after": 0.6866795205284839
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7616883116883117,
+      "p_after": 0.7554621848739497
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.41612378704432207,
+      "p_after": 0.4816439657903072
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5064531678084855,
+      "p_after": 0.5005880651691893
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.8957535060983336,
+      "p_after": 0.6127144221172779
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.4001231830500124,
+      "p_after": 0.7673669467787115
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.3306079706353754,
+      "p_after": 0.3306079706353754
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9417378571381615,
+      "p_after": 0.8058014084997664
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9368082368082368,
+      "p_after": 0.8212481962481963
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7791486291486291,
+      "p_after": 0.7932699047110059
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7257271770248417,
+      "p_after": 0.5761552823323317
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5218381976446492,
+      "p_after": 0.5218381976446492
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6432059735765714,
+      "p_after": 0.644887651004221
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6278039361837741,
+      "p_after": 0.4505034264928905
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7014939309056956,
+      "p_after": 0.7014939309056956
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 1.0,
+      "p_after": 0.855001155001155
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7876067453553683,
+      "p_after": 0.6868175503756565
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.3989997536339,
+      "p_after": 0.42323351986766616
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.4907348748812163,
+      "p_after": 0.3706046327720848
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7236551030668678,
+      "p_after": 0.7236551030668678
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6162828966534944,
+      "p_after": 0.6505159150970392
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.4511768087466791,
+      "p_after": 0.5847039492850734
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.8323582935600555,
+      "p_after": 0.8323582935600555
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.8356177606177606,
+      "p_after": 0.8356177606177606
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5096789742600983,
+      "p_after": 0.5096789742600983
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.1699920553853138,
+      "p_after": 0.2668021071221948
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6127144221172779,
+      "p_after": 0.6265393069099047
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7054307053665205,
+      "p_after": 0.5853796937595317
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.23213544045552817,
+      "p_after": 0.12105263157894737
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7616883116883117,
+      "p_after": 0.8298576902025179
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.4260401728417712,
+      "p_after": 0.4260401728417712
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.011587301587301587,
+      "p_after": 0.07986215538847118
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7288311688311688,
+      "p_after": 0.7616883116883117
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9891891891891891,
+      "p_after": 0.9891891891891891
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.3652180339985218,
+      "p_after": 0.3652180339985218
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.778984059418842,
+      "p_after": 0.778984059418842
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.22102432934441704,
+      "p_after": 0.22102432934441704
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5380321151769065,
+      "p_after": 0.5380321151769065
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.14776983316309159,
+      "p_after": 0.07263993316624895
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5478454114035176,
+      "p_after": 0.3493008130081301
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9523191626639903,
+      "p_after": 0.7018648496244813
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9373008476456752,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5064531678084855,
+      "p_after": 0.4027937915742794
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5064531678084855,
+      "p_after": 0.48805981587256175
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.18514357053682895,
+      "p_after": 0.18514357053682895
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6661813234445888,
+      "p_after": 0.7651884413227427
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6416288209764008,
+      "p_after": 0.9857142857142858
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7313730134801975,
+      "p_after": 0.7313730134801975
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9749034749034748,
+      "p_after": 0.9749034749034748
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9011897365345641,
+      "p_after": 0.6791979949874687
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7716450216450217,
+      "p_after": 0.7716450216450217
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.575278556232122,
+      "p_after": 0.2870880149812734
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.45902755780804555,
+      "p_after": 0.3437816587358928
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7005230467473031,
+      "p_after": 0.7316704731881492
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.2606829268292683,
+      "p_after": 0.2606829268292683
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.2752510974185494,
+      "p_after": 0.2752510974185494
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5327558973370214,
+      "p_after": 0.5412579216285194
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6264346200480022,
+      "p_after": 0.4907348748812163
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6127144221172779,
+      "p_after": 0.7075124919673761
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5215845017994919,
+      "p_after": 0.49000555443107086
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6636924379259344,
+      "p_after": 0.6521713983956547
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.27160618810418113,
+      "p_after": 0.27160618810418113
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7246031746031746,
+      "p_after": 0.7246031746031746
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.3485089314631655,
+      "p_after": 0.4201750702024749
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.515410199556541,
+      "p_after": 0.515410199556541
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7288311688311688,
+      "p_after": 0.7752164502164501
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.8158119658119659,
+      "p_after": 0.659783229896263
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9100470305120716,
+      "p_after": 0.6868016816234134
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.7594035509412616,
+      "p_after": 0.718944099378882
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.791883116883117,
+      "p_after": 0.791883116883117
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9031128134576409,
+      "p_after": 0.5745912549618527
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.35564227642276425,
+      "p_after": 0.35564227642276425
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.5327558973370214,
+      "p_after": 0.5327558973370214
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.35012312215052693,
+      "p_after": 0.3983980667181544
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6831591173054588,
+      "p_after": 0.4337005690938275
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.6454047208392778,
+      "p_after": 0.6947164196522347
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 1.0,
+      "p_after": 0.7560393854511502
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.8034749034749034,
+      "p_after": 0.8034749034749034
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.9412080515528792,
+      "p_after": 0.5847039492850734
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 1.0,
+      "p_after": 0.8461776255893902
+    },
+    {
+      "bucket": "B",
+      "generator": "chatgpt_saiga",
+      "p_before": 0.914223924568752,
+      "p_after": 0.9158894019943817
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.38575613120649466,
+      "p_after": 0.43921972336606485
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.903905330711253,
+      "p_after": 0.7014939309056956
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.7094503437987919,
+      "p_after": 0.5064531678084855
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.966038174911749,
+      "p_after": 0.778778358190123
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.4416121206438716,
+      "p_after": 0.2953806979081027
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5256322355850286,
+      "p_after": 0.70988111934816
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.2845798848999726,
+      "p_after": 0.7035420619860847
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.38355555555555554,
+      "p_after": 0.3028725678268019
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5745912549618527,
+      "p_after": 0.2916387084293844
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6941839893852279,
+      "p_after": 0.5811354747488569
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.7497799003224082,
+      "p_after": 0.7600076394194042
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.4461426107767571,
+      "p_after": 0.4461426107767571
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5723138222496373,
+      "p_after": 0.4664924506387921
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.2569720417627177,
+      "p_after": 0.30620590116013524
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6127144221172779,
+      "p_after": 0.6127144221172779
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6876010521821763,
+      "p_after": 0.5811835138960239
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6876010521821763,
+      "p_after": 0.7809307205536807
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.9661122661122661,
+      "p_after": 0.3846119733924612
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.15834561781296372,
+      "p_after": 0.15834561781296372
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6293810887839446,
+      "p_after": 0.6432059735765714
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.7273025217936908,
+      "p_after": 0.5447165402746464
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6921134905575133,
+      "p_after": 0.6024580118608677
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.7226050420168069,
+      "p_after": 0.7226050420168069
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.640259504840629,
+      "p_after": 0.6024580118608677
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5793810887839446,
+      "p_after": 0.5793810887839446
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6127144221172779,
+      "p_after": 0.6759365596242917
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6717280363091603,
+      "p_after": 0.6707202032534262
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5064531678084855,
+      "p_after": 0.47182373624925267
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.9412080515528792,
+      "p_after": 0.6954742151829142
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6258686688671188,
+      "p_after": 0.6130888368063484
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.48371503048922404,
+      "p_after": 0.5513460803141534
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.8429770679770681,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.46288896303015087,
+      "p_after": 0.46288896303015087
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6432059735765714,
+      "p_after": 0.7385790679908328
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6374536033265275,
+      "p_after": 0.7682342986690813
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5949603595414836,
+      "p_after": 0.44993664871713646
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5426829268292683,
+      "p_after": 0.5426829268292683
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.7642857142857143,
+      "p_after": 0.6075952075310227
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5380321151769065,
+      "p_after": 0.5380321151769065
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.4875090684296034,
+      "p_after": 0.5972648254811378
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.4632666441871792,
+      "p_after": 0.5478021414155235
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.09201149542476961,
+      "p_after": 0.14776983316309159
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.9857142857142858,
+      "p_after": 0.9857142857142858
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.3046586640834864,
+      "p_after": 0.3046586640834864
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6024580118608677,
+      "p_after": 0.6162828966534944
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.14784198323524164,
+      "p_after": 0.3487897888171936
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5982535336425259,
+      "p_after": 0.17403245942571782
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.666388930970055,
+      "p_after": 0.45947260624679986
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.877944158661389,
+      "p_after": 0.7870616928551287
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.37302355505095985,
+      "p_after": 0.23213544045552817
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.31454779933847526,
+      "p_after": 0.0397827903091061
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.4446383238535943,
+      "p_after": 0.4446383238535943
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.4027851335656214,
+      "p_after": 0.5440081034751441
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6984620642515379,
+      "p_after": 0.5096789742600983
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.15771135363092786,
+      "p_after": 0.11258988876773098
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 1.0,
+      "p_after": 0.833020358020358
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.740968801313629,
+      "p_after": 0.7076044136245916
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.0935995291258449,
+      "p_after": 0.10597326649958227
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.2006991260923845,
+      "p_after": 0.2006991260923845
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.7558974900438314,
+      "p_after": 0.6041844687655928
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.780111664836326,
+      "p_after": 0.2575880149812734
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 1.0,
+      "p_after": 0.6432059735765714
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5208288000440705,
+      "p_after": 0.7891462336374027
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.4632666441871792,
+      "p_after": 0.5652345298156539
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.9124170525450197,
+      "p_after": 0.78687261069048
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5643348447054425,
+      "p_after": 0.4875090684296034
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.8503676709590735,
+      "p_after": 0.6984525479195886
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6024580118608677,
+      "p_after": 0.41889578413309414
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.59426678788017,
+      "p_after": 0.59426678788017
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6048041804420261,
+      "p_after": 0.6127144221172779
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6432059735765714,
+      "p_after": 0.6477514281220259
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.4816439657903072,
+      "p_after": 0.6265393069099047
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 1.0,
+      "p_after": 1.0
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5616270262081503,
+      "p_after": 0.42343873472122695
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.7623784428132254,
+      "p_after": 0.7921504965622612
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5620987861145169,
+      "p_after": 0.2712465515666393
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6293810887839446,
+      "p_after": 0.6293810887839446
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5761552823323317,
+      "p_after": 0.49392491851185794
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 1.0,
+      "p_after": 0.772861452273217
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5209853958641493,
+      "p_after": 0.4875090684296034
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.858020358020358,
+      "p_after": 0.858020358020358
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.9031128134576409,
+      "p_after": 0.6432059735765714
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.4809458199215252,
+      "p_after": 0.4809458199215252
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.8237851985787717,
+      "p_after": 0.8237851985787717
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.36676597929338406,
+      "p_after": 0.7189604075185136
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6265393069099047,
+      "p_after": 0.6127144221172779
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.6127144221172779,
+      "p_after": 0.4816439657903072
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5453907453265605,
+      "p_after": 0.3760702443744119
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5899801671249585,
+      "p_after": 0.3961248115180699
+    },
+    {
+      "bucket": "B",
+      "generator": "gpt4_instruct",
+      "p_before": 0.5190880157980244,
+      "p_after": 0.48543655001767416
+    }
+  ]
+}

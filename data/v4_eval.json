@@ -1,0 +1,207 @@
+{
+  "v3": {
+    "thresholds": {
+      "base": 0.8459,
+      "short": 0.9685,
+      "cutoff": 40
+    },
+    "test_self": {
+      "fpr": 0.0075,
+      "n_human": 133,
+      "recall_ai": 0.6535,
+      "recall_ai_long": 0.6535,
+      "n_ai": 127
+    },
+    "holdout": {
+      "gpt4": {
+        "recall": 0.7,
+        "recall_flat": 0.7444,
+        "n": 90,
+        "med_wc": 51
+      },
+      "saiga": {
+        "recall": 0.8222,
+        "recall_flat": 0.9,
+        "n": 90,
+        "med_wc": 46
+      },
+      "llama": {
+        "recall": 0.449,
+        "recall_flat": 0.449,
+        "n": 49,
+        "med_wc": 181
+      },
+      "mistral": {
+        "recall": 0.5135,
+        "recall_flat": 0.5135,
+        "n": 37,
+        "med_wc": 179
+      }
+    },
+    "short": {
+      "50": {
+        "fpr": 0.0226,
+        "recall_all": 0.7331,
+        "recall_llama": 0.551,
+        "recall_mistral": 0.7027
+      },
+      "40": {
+        "fpr": 0.0226,
+        "recall_all": 0.7331,
+        "recall_llama": 0.5714,
+        "recall_mistral": 0.6757
+      },
+      "30": {
+        "fpr": 0.0226,
+        "recall_all": 0.4549,
+        "recall_llama": 0.3061,
+        "recall_mistral": 0.2973
+      }
+    },
+    "docx": {
+      "test_diploma": {
+        "verdict_thr": 0.8459,
+        "n_prose": 21,
+        "n_flagged": 0,
+        "flag_rate": 0.0,
+        "kind": "human"
+      },
+      "pure_ai": {
+        "verdict_thr": 0.8459,
+        "n_prose": 5,
+        "n_flagged": 0,
+        "flag_rate": 0.0,
+        "kind": "ai"
+      },
+      "pure_ai_ghost": {
+        "verdict_thr": 0.8459,
+        "n_prose": 5,
+        "n_flagged": 0,
+        "flag_rate": 0.0,
+        "kind": "ai"
+      },
+      "ai_edited": {
+        "verdict_thr": 0.8459,
+        "n_prose": 5,
+        "n_flagged": 0,
+        "flag_rate": 0.0,
+        "kind": "ai"
+      },
+      "mixed": {
+        "verdict_thr": 0.8459,
+        "n_prose": 7,
+        "n_flagged": 0,
+        "flag_rate": 0.0,
+        "kind": "mixed"
+      }
+    }
+  },
+  "v4": {
+    "thresholds": {
+      "base": 0.834,
+      "short": 0.889,
+      "cutoff": 40
+    },
+    "test_self": {
+      "fpr": 0.0226,
+      "n_human": 133,
+      "recall_ai": 0.6772,
+      "recall_ai_long": 0.6772,
+      "n_ai": 127
+    },
+    "holdout": {
+      "gpt4": {
+        "recall": 0.7222,
+        "recall_flat": 0.7667,
+        "n": 90,
+        "med_wc": 51
+      },
+      "saiga": {
+        "recall": 0.8111,
+        "recall_flat": 0.8222,
+        "n": 90,
+        "med_wc": 46
+      },
+      "llama": {
+        "recall": 0.9388,
+        "recall_flat": 0.9388,
+        "n": 49,
+        "med_wc": 181
+      },
+      "mistral": {
+        "recall": 0.9189,
+        "recall_flat": 0.9189,
+        "n": 37,
+        "med_wc": 179
+      }
+    },
+    "short": {
+      "50": {
+        "fpr": 0.0226,
+        "recall_all": 0.7669,
+        "recall_llama": 0.7347,
+        "recall_mistral": 0.8649
+      },
+      "40": {
+        "fpr": 0.0226,
+        "recall_all": 0.7481,
+        "recall_llama": 0.6735,
+        "recall_mistral": 0.8649
+      },
+      "30": {
+        "fpr": 0.0226,
+        "recall_all": 0.6278,
+        "recall_llama": 0.5918,
+        "recall_mistral": 0.7568
+      }
+    },
+    "docx": {
+      "test_diploma": {
+        "verdict_thr": 0.834,
+        "n_prose": 21,
+        "n_flagged": 0,
+        "flag_rate": 0.0,
+        "kind": "human"
+      },
+      "pure_ai": {
+        "verdict_thr": 0.834,
+        "n_prose": 5,
+        "n_flagged": 5,
+        "flag_rate": 1.0,
+        "kind": "ai"
+      },
+      "pure_ai_ghost": {
+        "verdict_thr": 0.834,
+        "n_prose": 5,
+        "n_flagged": 2,
+        "flag_rate": 0.4,
+        "kind": "ai"
+      },
+      "ai_edited": {
+        "verdict_thr": 0.834,
+        "n_prose": 5,
+        "n_flagged": 0,
+        "flag_rate": 0.0,
+        "kind": "ai"
+      },
+      "mixed": {
+        "verdict_thr": 0.834,
+        "n_prose": 7,
+        "n_flagged": 0,
+        "flag_rate": 0.0,
+        "kind": "mixed"
+      }
+    }
+  },
+  "_verdict": {
+    "checks": {
+      "test_self FPR<=3%": true,
+      "holdout_gpt4>=0.70": true,
+      "holdout_saiga>=0.78": true,
+      "holdout_llama>=0.50": true,
+      "holdout_mistral>=0.50": true,
+      "test_diploma FPR=0": true
+    },
+    "passed": true
+  }
+}

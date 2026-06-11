@@ -1,0 +1,13 @@
+{
+  "threshold": 0.8459,
+  "threshold_short": 0.9685,
+  "short_word_cutoff": 40,
+  "base": "ai-forever/ruBert-base (v3)",
+  "calibration": "isotonic on VAL",
+  "selection": "VAL margin 0.004 (tighter — VAL->test FPR gap ~2x), test-validated",
+  "val_fpr": 0.0049,
+  "val_recall": 0.4806,
+  "test_fpr": 0.015,
+  "highlight_threshold": 0.6,
+  "note": "Вердиктный порог 0.846 для фрагментов >=40 слов; для <40 слов отдельный строже порог threshold_short=0.9685 (держит FPR<=3% на коротком, где хвост нестабилен). highlight_threshold=0.6 — мягкий порог ПОДСВЕТКИ карты (у v3 чистое разделение docx, перекрытия как у v2 нет). v3 держит test-FPR<v2(0.023) при recall много выше; см. data/v3_eval.json"
+}

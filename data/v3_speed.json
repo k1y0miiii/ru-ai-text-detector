@@ -1,0 +1,14 @@
+{
+  "v2 (tiny2)": {
+    "params_M": 29.194394,
+    "ms_single": 1.7290115356445312,
+    "ms_per_text_batch32": 2.068016678094864,
+    "texts_per_sec_batch32": 483.5550944014815
+  },
+  "v3 (ruBert-base)": {
+    "params_M": 178.308866,
+    "ms_single": 29.06203269958496,
+    "ms_per_text_batch32": 25.607049465179443,
+    "texts_per_sec_batch32": 39.051746331017306
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "threshold": 0.834,
+  "threshold_short": 0.889,
+  "short_word_cutoff": 40,
+  "base": "ai-forever/ruBert-base (v4 = v3 + llama3.1/mistral в train)",
+  "calibration": "isotonic on VAL",
+  "selection": "наименьший калиброванный порог с VAL-human FPR<=2.5%",
+  "val_fpr": 0.00980392156862745,
+  "val_recall": 0.4077669902912621,
+  "val_short_fpr_at_30w": 0.024509803921568627,
+  "highlight_threshold": 0.72,
+  "note": "Вердиктный порог для >=40 слов; для <40 слов threshold_short строже (держит FPR на коротком хвосте). highlight_threshold=0.72 — мягкая подсветка карты, ПОВЕРСИОННАЯ (НЕ 0.6 как v3: у v4 распределение p сдвинуто вверх; 0.72 держит pure_ai 5/5, причёсанный ИИ 4/5, на реальном ВКР зоны внимания 24->7, test_diploma 0 ложных). Источник истины для карты — HIGHLIGHT_THR в detector_tui.py. Деривация ВЕРДИКТНЫХ порогов идентична v3 для яблоко-к-яблоку."
+}
