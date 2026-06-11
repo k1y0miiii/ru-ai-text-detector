@@ -1,0 +1,16 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.9.2
+torch==2.4.1
+transformers==4.44.2
+scikit-learn==1.5.2
+numpy==1.26.4
+joblib==1.4.2
+razdel==0.5.0
+# препроцессинг docx/pdf для extract_text.py (не трогает модель/признаки):
+python-docx==1.2.0
+# PDF: PyMuPDF надёжнее pdfplumber на кириллице — MuPDF резолвит CMap/ToUnicode,
+# отдаёт чистый UTF-8 и текст в порядке чтения «блоками» (= готовые абзацы).
+pymupdf==1.27.2.3
+# терминальный TUI (detector_tui.py) — оболочка поверх бэкенда, без ML:
+textual==8.2.7

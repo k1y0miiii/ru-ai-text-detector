@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Виртуальные окружения
+venv/
+.venv/
+env/
+
+# macOS
+.DS_Store
+
+# Внутренние заметки для Claude Code — не публикуем
+CLAUDE.md
+.claude/
+
+# Веса трансформеров (v2/v3/v4) — ставятся через setup.sh
+# (базовые модели с HuggingFace, обученная v4 из GitHub Release)
+models/v2_model/
+models/v3_model/
+models/v4_model/
+
+# Базовые модели для переобучения (скачиваются с HuggingFace)
+bases/
+
+# Кэши скоринга и логи прогонов — пересоздаются
+data/*_score_cache.json
+data/feat_cache.json
+data/*.log
+
+# Текстовые корпуса не распространяем — собираются скриптами training/
+# (часть данных — из сторонних датасетов со своими лицензиями)
+data/*.jsonl
+!data/demo.jsonl
+
+# Документы в samples/ по умолчанию не коммитим (приватность).
+# В репозиторий идут только заведомо безопасные синтетические фикстуры.
+samples/*.docx
+samples/*.pdf
+!samples/test_diploma.docx
+!samples/test_mixed.docx
+!samples/test_pure_ai.docx
+!samples/test_pure_ai_ghost.docx
+!samples/test_ai_edited.docx
+
+# Сгенерированные отчёты
+*.report.md
+*.report.html

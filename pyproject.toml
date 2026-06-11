@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aidetector"
+version = "1.0.0"
+description = "Детектор ИИ-текста на русском: признаки (v1) + дообученные трансформеры (v2/v3/v4)"
+readme = "README.md"
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+
+[tool.setuptools]
+packages = ["aidetector"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
