@@ -13,9 +13,12 @@ RUN pip install --no-cache-dir -e .
 
 COPY . .
 
-# Веса трансформеров v2–v4 (models/) для self-hosted образа смонтируйте томом или
-# прогоните setup.sh до сборки. Для HF Spaces — коммитятся в Space-репо через git-lfs
-# (см. deploy/spaces/DEPLOY.md), тогда COPY . . затягивает их в образ.
+# Веса всех моделей (v1–v4). Если models/ уже в контексте (self-hosted: положили через
+# setup.sh) — шаг пропускается. Иначе (HF Spaces: у Space-репо лимит 1 ГБ, веса туда не
+# кладём) скачиваем из публичного Model-репо НА ЭТАПЕ BUILD и запекаем в образ. Структура
+# Model-репо зеркалит models/ (v2_model/ v3_model/ v4_model/ + калибраторы + пороги).
+RUN python -c "import os; from huggingface_hub import snapshot_download; (print('models present, skip') if os.path.exists('models/v4_model/model.safetensors') else snapshot_download('k1y0mi/ru-ai-text-detector', repo_type='model', local_dir='models'))" \
+    && rm -rf models/.cache
 
 # Прогрев кэша модели перплексии v1 (ai-forever/rugpt3small) ПРЯМО В ОБРАЗ. Нужна на
 # КАЖДЫЙ запрос (app.py всегда считает фичи v1), поэтому без неё /detect не работает.

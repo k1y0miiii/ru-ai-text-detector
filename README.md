@@ -77,9 +77,10 @@ uvicorn apps.app:app        # then open http://127.0.0.1:8000/
 ```
 
 **Deploy to Hugging Face Spaces** (Docker SDK) — see
-[`deploy/spaces/DEPLOY.md`](deploy/spaces/DEPLOY.md): all four models ship via
-git-lfs, the perplexity model is baked into the image, and the runtime is fully
-offline (`HF_HUB_OFFLINE=1`) so it does not break when huggingface.co is unreachable.
+[`deploy/spaces/DEPLOY.md`](deploy/spaces/DEPLOY.md): the weights live in a companion
+HF model repo (Spaces have a 1 GB repo limit) and are baked into the image at build
+time together with the perplexity model, so the runtime is fully offline
+(`HF_HUB_OFFLINE=1`) and does not break when huggingface.co is unreachable.
 A free Space sleeps after ~48h idle — `.github/workflows/keepalive.yml` pings
 `/health` to reduce that (set the `SPACE_URL` repo variable); guaranteed uptime needs
 a paid tier.

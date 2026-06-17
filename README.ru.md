@@ -77,9 +77,10 @@ uvicorn apps.app:app        # затем открыть http://127.0.0.1:8000/
 ```
 
 **Деплой на Hugging Face Spaces** (Docker SDK) — см.
-[`deploy/spaces/DEPLOY.md`](deploy/spaces/DEPLOY.md): все четыре модели уезжают
-через git-lfs, модель перплексии запекается в образ, а рантайм полностью офлайн
-(`HF_HUB_OFFLINE=1`) — сервис не отваливается, когда huggingface.co недоступен.
+[`deploy/spaces/DEPLOY.md`](deploy/spaces/DEPLOY.md): веса лежат в отдельном HF
+Model-репо (у Spaces лимит репозитория 1 ГБ) и запекаются в образ на этапе сборки
+вместе с моделью перплексии, поэтому рантайм полностью офлайн (`HF_HUB_OFFLINE=1`) —
+сервис не отваливается, когда huggingface.co недоступен.
 Бесплатный Space засыпает после ~48 ч простоя — `.github/workflows/keepalive.yml`
 пингует `/health`, чтобы снизить это (задайте repo-variable `SPACE_URL`);
 гарантированный аптайм — только платный тариф.

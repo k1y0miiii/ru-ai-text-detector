@@ -1,88 +1,83 @@
 # Деплой на Hugging Face Spaces (Docker SDK)
 
-Пошагово: как поднять веб-детектор на HF Spaces так, чтобы он **не отваливался**,
-давал **выбор всех моделей** и был **под телефон**.
+Как поднять веб-детектор на HF Spaces так, чтобы он **не отваливался**, давал
+**выбор всех моделей** и был **под телефон**.
+
+## Архитектура деплоя
+
+У бесплатных **Spaces лимит репозитория 1 ГБ** — все веса (~1.5 ГБ) туда не влезают.
+Поэтому:
+
+- **Веса** (v1–v4) лежат в отдельном **Model-репо** `k1y0mi/ru-ai-text-detector`
+  (у model-репо лимита 1 ГБ нет). Структура зеркалит `models/`:
+  `v2_model/ v3_model/ v4_model/` + `*_calibrator.joblib` + `threshold_*.json` +
+  `model.joblib` (v1).
+- **Space** `k1y0mi/ru-ai-text-detector` (Docker SDK) — только код + `Dockerfile`,
+  репозиторий маленький. На этапе **build** Dockerfile скачивает веса из Model-репо
+  (`snapshot_download`) и запекает в образ. В **рантайме** включён офлайн
+  (`HF_HUB_OFFLINE=1`) — сеть к huggingface.co не нужна, сервис не падает.
+
+То есть build-time зависимость от HF есть (один раз, при сборке), а рантайм — нет.
 
 ## Что уже готово в репозитории
 
-- `Dockerfile` — Docker SDK, порт **8000**; прогревает кэш модели перплексии v1
-  (`rugpt3small`) на этапе сборки и включает офлайн-режим (`HF_HUB_OFFLINE=1`,
-  `TRANSFORMERS_OFFLINE=1`) — в рантайме сеть к huggingface.co не нужна.
+- `Dockerfile` — Docker SDK, порт 8000; качает веса из Model-репо на build
+  (если `models/` уже в контексте — например, self-hosted через `setup.sh` — шаг
+  пропускается), прогревает кэш `rugpt3small`, включает офлайн-рантайм.
 - `apps/app.py` — `GET /` отдаёт мобильную страницу с выбором модели; `POST /detect`
-  как прежде.
+  без изменений.
 - `deploy/spaces/README.md` — README **Space-репо** с метаданными (`sdk: docker`,
-  `app_port: 8000`). На Spaces его нужно положить в корень репозитория Space.
+  `app_port: 8000`).
 
-## Предусловия
+## Обновление весов в Model-репо (когда модели поменялись)
 
-- Аккаунт на huggingface.co и **Access Token** с правом записи:
-  <https://huggingface.co/settings/tokens>.
-- Установлены `git` и `git-lfs`:
-  ```bash
-  git lfs install
-  ```
-- Веса моделей лежат локально в `models/` (v2_model, v3_model, v4_model,
-  калибраторы, `threshold_*.json`, `model.joblib`). Суммарно ~1.6 ГБ.
+Залить локальный `models/` (нужную структуру) в Model-репо:
 
-## Шаг 1. Создать Space
-
-На huggingface.co → **New Space** → SDK = **Docker** (пустой/Blank). Получите URL
-вида `https://huggingface.co/spaces/<user>/<space>`.
-
-## Шаг 2. Подключить Space как git-remote
-
-Из корня этого репозитория:
-
-```bash
-git remote add space https://huggingface.co/spaces/<user>/<space>
-# логин/пароль при push: username = ваш ник, password = Access Token
+```python
+from huggingface_hub import HfApi
+HfApi().upload_folder(
+    folder_path="models",                 # или подготовленный staging
+    repo_id="k1y0mi/ru-ai-text-detector",
+    repo_type="model",
+    delete_patterns="*",                  # чистый mirror
+)
 ```
 
-## Шаг 3. Положить метаданные Space в корень
+(Нужен `huggingface-cli login` с токеном на запись. Веса крупные — заливаются через
+LFS автоматически; одинаковые файлы HF дедуплицирует по хэшу.)
 
-HF читает YAML-заголовок из корневого `README.md` Space-репо. Скопируйте туда наш
-файл (он перетрёт README проекта ТОЛЬКО в ветке, которую пушим в Space, — удобно
-держать отдельную ветку для деплоя):
+## Деплой/обновление Space (код)
 
-```bash
-git checkout -b space-deploy
-cp deploy/spaces/README.md README.md
+Залить код Space (без весов — они придут на build):
+
+```python
+from huggingface_hub import HfApi
+HfApi().upload_folder(
+    folder_path=".",                      # или staging только с кодом+Dockerfile
+    repo_id="k1y0mi/ru-ai-text-detector",
+    repo_type="space",
+    delete_patterns="*",
+    ignore_patterns=["models/**", "venv/**", ".git/**", "data/**",
+                     "training/**", "evaluation/**", "samples/**",
+                     "CLAUDE.md", ".claude/**", "docs/**", "tests/**"],
+    commit_message="update space",
+)
 ```
 
-## Шаг 4. Затрекать веса через git-lfs
+README с `sdk: docker` переключает Space на Docker автоматически. После пуша HF
+пересобирает образ (несколько минут: torch + скачивание весов + прогрев).
 
-Модели большие — только через LFS, иначе push отклонят:
+## Проверка
 
-```bash
-git lfs track "models/**"
-git add .gitattributes
-git add models README.md
-git commit -m "deploy: HF Space (Docker) с весами через git-lfs"
-```
-
-## Шаг 5. Push в Space
-
-```bash
-git push space space-deploy:main
-```
-
-HF соберёт Docker-образ (прогрев `rugpt3small` идёт на этом этапе — нужна сеть на
-билд-машине HF, она есть) и поднимет сервис на порту 8000. Первый билд из-за весов
-и зависимостей torch занимает несколько минут.
-
-## Шаг 6. Проверка
-
-- Открыть `https://<user>-<space>.hf.space/` — страница детектора.
-- `https://<user>-<space>.hf.space/health` → `{"status":"ok", ...}`.
+- `https://k1y0mi-ru-ai-text-detector.hf.space/` — страница детектора.
+- `.../health` → `{"status":"ok", ...}`.
 - Прогнать текст на каждой модели (v1–v4).
 
 ## Заметки
 
-- **«Отвалился» = краш загрузки модели** — закрыто: веса v2–v4 в образе (через LFS),
-  `rugpt3small` запечён в кэш, рантайм офлайн. HF-аптайм не нужен для инференса.
-- **«Отвалился» = Space уснул** — бесплатный Space засыпает после ~48 ч простоя.
-  Это поведение тарифа, кодом не лечится. Снизить простой — keep-alive
+- **«Отвалился» = краш загрузки модели** — закрыто: веса в образе (скачаны на build),
+  `rugpt3small` запечён, рантайм офлайн.
+- **«Отвалился» = Space уснул** — бесплатный Space засыпает после ~48 ч простоя
+  (поведение тарифа, кодом не лечится). Снизить простой — keep-alive
   (`.github/workflows/keepalive.yml` пингует `/health`; задайте repo-variable
-  `SPACE_URL`). Гарантированный аптайм — только платный тариф Spaces.
-- Обновление: повторить шаги 3–5 (или просто `git push space …` после новых
-  коммитов в `space-deploy`).
+  `SPACE_URL`). Гарантированный аптайм — только платный тариф.
