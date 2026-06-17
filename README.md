@@ -29,8 +29,11 @@ roll the default back to v3, change one line `DEFAULT_VERSION = "v3"` in
 
 ## Install
 
-Python 3.10+ required. The script creates a virtual environment, installs
-dependencies, and downloads the production v4 model:
+**Python 3.10–3.12** required (not 3.13: the pins `torch 2.4.1` / `sklearn 1.5.2` /
+`numpy 1.26.4` have no wheels for it, and `models/*.joblib` are pickled with
+`sklearn 1.5.2` — the stack version must stay fixed). 3.12 recommended. If you have
+several Pythons, pick one: `PYTHON=python3.12 ./setup.sh`. The script creates a
+virtual environment, installs dependencies, and downloads the production v4 model:
 
 ```bash
 git clone https://github.com/k1y0miiii/ru-ai-text-detector.git
