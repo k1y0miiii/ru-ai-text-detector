@@ -15,9 +15,13 @@ transformer_score.py): шире покрытие генераторов. v3 (п�
 """
 
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 import joblib
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query, Request
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, Field
 
 from aidetector import transformer_score as TF
@@ -48,6 +52,18 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="AI Text Detector (боевая модель v4)", lifespan=lifespan)
+
+# --- веб-страница (тонкий клиент к /detect; ML-логику ниже НЕ трогаем) ---
+BASE_DIR = Path(__file__).resolve().parent
+templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
+app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
+
+
+@app.get("/", response_class=HTMLResponse)
+def index(request: Request):
+    """Мобильная веб-страница: вставил текст -> выбрал модель -> вердикт."""
+    return templates.TemplateResponse(
+        "index.html", {"request": request, "default_model": DEFAULT_MODEL})
 
 
 class DetectIn(BaseModel):

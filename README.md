@@ -69,6 +69,21 @@ curl -s localhost:8000/detect -H 'Content-Type: application/json' \
 The response has the probability, a verdict against the calibrated threshold, and a
 breakdown of the v1 features (always shown — it explains why the text scored as it did).
 
+Web page (desktop + mobile): the same service serves a UI at `/` — paste text, pick
+the model (v1–v4), get the verdict. No external CDNs; everything is served locally.
+
+```bash
+uvicorn apps.app:app        # then open http://127.0.0.1:8000/
+```
+
+**Deploy to Hugging Face Spaces** (Docker SDK) — see
+[`deploy/spaces/DEPLOY.md`](deploy/spaces/DEPLOY.md): all four models ship via
+git-lfs, the perplexity model is baked into the image, and the runtime is fully
+offline (`HF_HUB_OFFLINE=1`) so it does not break when huggingface.co is unreachable.
+A free Space sleeps after ~48h idle — `.github/workflows/keepalive.yml` pings
+`/health` to reduce that (set the `SPACE_URL` repo variable); guaranteed uptime needs
+a paid tier.
+
 Terminal UI with a per-paragraph document map (`.txt`, `.docx`, `.pdf`):
 
 ```bash

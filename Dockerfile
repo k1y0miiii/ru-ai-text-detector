@@ -13,10 +13,20 @@ RUN pip install --no-cache-dir -e .
 
 COPY . .
 
-# Веса трансформера v4 (models/v4_model/) в образ не кладутся — смонтируйте
-# каталог models/ томом или прогоните setup.sh до сборки. Модель перплексии для
-# v1 (ai-forever/rugpt3small) скачается в кэш при первом запросе; для прод-образа
-# кэш лучше прогреть на этапе сборки (см. README).
+# Веса трансформеров v2–v4 (models/) для self-hosted образа смонтируйте томом или
+# прогоните setup.sh до сборки. Для HF Spaces — коммитятся в Space-репо через git-lfs
+# (см. deploy/spaces/DEPLOY.md), тогда COPY . . затягивает их в образ.
+
+# Прогрев кэша модели перплексии v1 (ai-forever/rugpt3small) ПРЯМО В ОБРАЗ. Нужна на
+# КАЖДЫЙ запрос (app.py всегда считает фичи v1), поэтому без неё /detect не работает.
+# Качается здесь — на этапе build есть сеть; в рантайме её уже не требуется.
+RUN python -c "import aidetector.features as f; f._lazy_load()"
+
+# Рантайм — полностью офлайн: from_pretrained берёт веса с диска и НЕ ходит на
+# huggingface.co. Так сервис не «отваливается», когда HF недоступен. ВАЖНО: эти ENV
+# идут ПОСЛЕ прогрева выше (иначе скачивание упало бы).
+ENV HF_HUB_OFFLINE=1 \
+    TRANSFORMERS_OFFLINE=1
 
 EXPOSE 8000
 CMD ["uvicorn", "apps.app:app", "--host", "0.0.0.0", "--port", "8000"]

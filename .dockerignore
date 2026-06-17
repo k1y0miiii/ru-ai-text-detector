@@ -1,0 +1,22 @@
+# Контекст сборки: только то, что нужно сервису. Веса моделей (models/) ОСТАВЛЯЕМ —
+# без них v1–v4 не работают. Всё обучающее/dev/кэши — вон (размер + не светим данные).
+venv/
+.git/
+.gitignore
+**/__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.DS_Store
+**/.DS_Store
+docs/
+CLAUDE.md
+data/
+training/
+evaluation/
+bases/
+tests/
+samples/
+.claude/
+.github/
+setup.sh

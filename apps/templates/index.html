@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Детектор ИИ-текста</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🔎 Детектор ИИ-текста</h1>
+      <p class="sub">Вставь текст на русском — оценим вероятность, что он написан ИИ.</p>
+    </header>
+
+    <div class="disclaimer">
+      Это <strong>вероятностная оценка, не доказательство авторства</strong>. Любой
+      детектор ошибается, особенно на коротких текстах и у неносителей языка.
+      Недопустимо как основание для дисциплинарных или академических санкций.
+    </div>
+
+    <textarea id="text" placeholder="Вставьте текст для проверки…"></textarea>
+
+    <div class="controls">
+      <select id="model" aria-label="Модель">
+        <option value="v4">v4 — боевая (шире покрытие)</option>
+        <option value="v3">v3 — консервативная</option>
+        <option value="v2">v2 — лёгкая, быстрая</option>
+        <option value="v1">v1 — признаки, интерпретируемая</option>
+      </select>
+      <button id="run">Проверить</button>
+    </div>
+
+    <div id="loading" class="hidden">
+      <span class="spinner"></span>
+      <span>Считаем… первый запрос может «прогревать» модель.</span>
+    </div>
+
+    <div id="error" class="hidden"></div>
+
+    <div id="result" class="card hidden">
+      <div class="verdict" id="verdict"></div>
+      <div class="prob" id="prob"></div>
+      <div class="bar">
+        <div class="bar-fill" id="barFill"></div>
+        <div class="bar-thr" id="barThr"></div>
+      </div>
+      <div class="meta" id="meta"></div>
+      <div class="note" id="note"></div>
+      <details>
+        <summary>Признаки v1 (прозрачность)</summary>
+        <table class="features"><tbody id="features"></tbody></table>
+      </details>
+    </div>
+
+    <footer>
+      Self-hosted, считается локально. Модель по умолчанию — <code>{{ default_model }}</code>.
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

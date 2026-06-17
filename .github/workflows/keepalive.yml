@@ -1,0 +1,32 @@
+# Keep-alive для бесплатного HF Space: периодически дёргаем /health, чтобы Space
+# реже засыпал (free-тариф спит после ~48 ч простоя). Пинговать изнутри нельзя —
+# спящий Space не выполняет код, поэтому пинг ВНЕШНИЙ, отсюда.
+#
+# Настройка: Settings → Secrets and variables → Actions → Variables → New variable
+#   SPACE_URL = https://<user>-<space>.hf.space   (без слэша в конце)
+#
+# Ограничение: GitHub отключает scheduled workflows в неактивных репозиториях
+# примерно через 60 дней. Для гарантированного аптайма используйте внешний пингер
+# (UptimeRobot / cron-job.org) на тот же /health, либо платный тариф Spaces.
+
+name: keepalive
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # каждые 6 часов (запас к 48-часовому простою)
+  workflow_dispatch: {}      # ручной запуск из вкладки Actions
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Space /health
+        env:
+          SPACE_URL: ${{ vars.SPACE_URL }}
+        run: |
+          if [ -z "$SPACE_URL" ]; then
+            echo "SPACE_URL не задан (repo variable) — пропускаю пинг."
+            exit 0
+          fi
+          echo "Пингую $SPACE_URL/health"
+          curl -fsS --max-time 60 --retry 3 --retry-delay 10 "$SPACE_URL/health"

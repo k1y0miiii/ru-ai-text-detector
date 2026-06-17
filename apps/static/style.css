@@ -1,0 +1,250 @@
+/* Самодостаточный стиль детектора — без внешних CDN (проект декларирует
+   "no calls to external services"). Mobile-first, светлая/тёмная по системе. */
+
+:root {
+  --bg: #f7f7f8;
+  --card: #ffffff;
+  --text: #1a1a1f;
+  --muted: #6b7280;
+  --border: #e3e3e8;
+  --accent: #4f46e5;
+  --accent-weak: #eef0ff;
+  --ai: #dc2626;
+  --ai-weak: #fee2e2;
+  --human: #16a34a;
+  --human-weak: #dcfce7;
+  --warn-border: #f59e0b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1014;
+    --card: #1a1c22;
+    --text: #e8e8ec;
+    --muted: #9ca3af;
+    --border: #2c2e36;
+    --accent: #8b87ff;
+    --accent-weak: #23233a;
+    --ai: #f87171;
+    --ai-weak: #3a1d1d;
+    --human: #4ade80;
+    --human-weak: #1a3322;
+    --warn-border: #fbbf24;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 16px 64px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 8px 0 4px;
+}
+
+header p.sub {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.disclaimer {
+  background: var(--accent-weak);
+  border-left: 4px solid var(--warn-border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+  padding: 14px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+}
+
+textarea:focus { border-color: var(--accent); }
+
+.controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 12px;
+}
+
+select {
+  flex: 1 1 220px;
+  min-height: 48px;
+  padding: 0 12px;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+button#run {
+  flex: 1 1 140px;
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button#run:active { transform: translateY(1px); }
+button#run:disabled { opacity: 0.6; cursor: default; }
+
+.hidden { display: none !important; }
+
+#loading {
+  margin-top: 18px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.spinner {
+  width: 18px; height: 18px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+#error {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--ai-weak);
+  color: var(--ai);
+  font-size: 0.9rem;
+}
+
+.card {
+  margin-top: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.verdict {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.verdict-ai { color: var(--ai); }
+.verdict-human { color: var(--human); }
+
+.prob {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 6px 0 2px;
+}
+
+.bar {
+  position: relative;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--border);
+  overflow: hidden;
+  margin: 10px 0 4px;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 6px 0 0 6px;
+  transition: width 0.3s ease;
+}
+
+.bar-fill.ai { background: var(--ai); }
+.bar-fill.human { background: var(--human); }
+
+.bar-thr {
+  position: absolute;
+  top: -3px;
+  width: 2px;
+  height: 18px;
+  background: var(--text);
+  opacity: 0.55;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+details { margin-top: 12px; }
+details summary {
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+table.features {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+table.features td {
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+table.features td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 32px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}

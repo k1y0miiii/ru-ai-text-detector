@@ -18,6 +18,7 @@ env/
 # Внутренние заметки для Claude Code — не публикуем
 CLAUDE.md
 .claude/
+docs/superpowers/
 
 # Веса трансформеров (v2/v3/v4) — ставятся через setup.sh
 # (базовые модели с HuggingFace, обученная v4 из GitHub Release)
