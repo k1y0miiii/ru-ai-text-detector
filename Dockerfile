@@ -17,7 +17,11 @@ COPY . .
 # setup.sh) — шаг пропускается. Иначе (HF Spaces: у Space-репо лимит 1 ГБ, веса туда не
 # кладём) скачиваем из публичного Model-репо НА ЭТАПЕ BUILD и запекаем в образ. Структура
 # Model-репо зеркалит models/ (v2_model/ v3_model/ v4_model/ + калибраторы + пороги).
-RUN python -c "import os; from huggingface_hub import snapshot_download; (print('models present, skip') if os.path.exists('models/v4_model/model.safetensors') else snapshot_download('k1y0mi/ru-ai-text-detector', repo_type='model', local_dir='models'))" \
+# revision пиннится на конкретный коммит Model-репо: воспроизводимая сборка + защита
+# от молчаливой подмены весов на плавающем main (артефакты first-party, но joblib.load
+# калибраторов — десериализация, поэтому фиксируем источник по SHA).
+ARG MODELS_REV=175e75ec79e9471f3f5b4ab0da9b859188446807
+RUN python -c "import os; from huggingface_hub import snapshot_download; (print('models present, skip') if os.path.exists('models/v4_model/model.safetensors') else snapshot_download('k1y0mi/ru-ai-text-detector', repo_type='model', revision='${MODELS_REV}', local_dir='models'))" \
     && rm -rf models/.cache
 
 # Прогрев кэша модели перплексии v1 (ai-forever/rugpt3small) ПРЯМО В ОБРАЗ. Нужна на
