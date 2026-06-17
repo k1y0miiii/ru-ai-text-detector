@@ -2,8 +2,9 @@
 # реже засыпал (free-тариф спит после ~48 ч простоя). Пинговать изнутри нельзя —
 # спящий Space не выполняет код, поэтому пинг ВНЕШНИЙ, отсюда.
 #
-# Настройка: Settings → Secrets and variables → Actions → Variables → New variable
-#   SPACE_URL = https://<user>-<space>.hf.space   (без слэша в конце)
+# URL Space захардкожен ниже (он публичный — секретом быть не обязан), так что
+# настройка не нужна: работает сразу после пуша. Если форкнул/переименовал Space —
+# поменяй URL ниже ИЛИ задай repo-variable SPACE_URL (она перекрывает хардкод).
 #
 # Ограничение: GitHub отключает scheduled workflows в неактивных репозиториях
 # примерно через 60 дней. Для гарантированного аптайма используйте внешний пингер
@@ -22,11 +23,8 @@ jobs:
     steps:
       - name: Ping Space /health
         env:
-          SPACE_URL: ${{ vars.SPACE_URL }}
+          # repo-variable SPACE_URL перекрывает хардкод, если задана; иначе — дефолт
+          SPACE_URL: ${{ vars.SPACE_URL || 'https://k1y0mi-ru-ai-text-detector.hf.space' }}
         run: |
-          if [ -z "$SPACE_URL" ]; then
-            echo "SPACE_URL не задан (repo variable) — пропускаю пинг."
-            exit 0
-          fi
           echo "Пингую $SPACE_URL/health"
           curl -fsS --max-time 60 --retry 3 --retry-delay 10 "$SPACE_URL/health"
