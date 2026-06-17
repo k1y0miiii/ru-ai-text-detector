@@ -18,8 +18,9 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 
 import joblib
-from fastapi import FastAPI, Query, Request
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, File, Query, Request, UploadFile
+from fastapi.concurrency import run_in_threadpool
+from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel, Field
@@ -120,3 +121,51 @@ def detect(inp: DetectIn, model: str = Query(DEFAULT_MODEL, pattern="^(v1|v2|v3|
 
     return DetectOut(model=model, ai_probability=round(proba, 3), verdict=verdict,
                      threshold=round(thr, 3), features=feat_dict, note=note)
+
+
+# --- загрузка документа + поабзацная карта + отчёт (переиспользуем headless-логику
+#     detector_tui: extract_text -> document_scan -> Report -> report_markdown/html) ---
+DOC_EXTS = {".txt", ".docx", ".pdf"}
+MAX_UPLOAD = 10 * 1024 * 1024        # 10 МБ — защита от слишком больших файлов
+
+
+def _scan_to_payload(tmp_path: str, model: str) -> dict:
+    """Синхронно (в threadpool): файл -> Report -> сводка + .md/.html отчёт."""
+    from apps import detector_tui as TUI        # ленивый импорт (тянет textual/rich)
+    report = TUI.run_scan(tmp_path, model)
+    if getattr(report, "error", None):
+        return {"error": report.error}
+    summary = [{"cat": c, "n": n, "chars": ch, "share": round(sh, 4)}
+               for c, n, ch, sh in TUI.summarize(report)]
+    return {"model": model, "n_total": report.n_total, "n_dropped": len(report.dropped),
+            "warnings": list(getattr(report, "warnings", []) or []), "summary": summary,
+            "report_md": TUI.report_markdown(report), "report_html": TUI.report_html(report)}
+
+
+@app.post("/scan")
+async def scan(file: UploadFile = File(...),
+               model: str = Query(DEFAULT_MODEL, pattern="^(v1|v2|v3|v4)$")):
+    """Загрузка .txt/.docx/.pdf -> поабзацная карта ИИ + отчёт (.md/.html для скачивания)."""
+    import os
+    import tempfile
+
+    suffix = Path(file.filename or "").suffix.lower()
+    if suffix not in DOC_EXTS:
+        return JSONResponse({"error": "Поддерживаются только .txt, .docx, .pdf"},
+                            status_code=400)
+    data = await file.read()
+    if len(data) > MAX_UPLOAD:
+        return JSONResponse({"error": f"Файл больше {MAX_UPLOAD // (1024 * 1024)} МБ"},
+                            status_code=413)
+    if not data:
+        return JSONResponse({"error": "Пустой файл"}, status_code=400)
+
+    tmp = tempfile.NamedTemporaryFile(suffix=suffix, delete=False)
+    try:
+        tmp.write(data)
+        tmp.close()
+        payload = await run_in_threadpool(_scan_to_payload, tmp.name, model)
+    finally:
+        os.unlink(tmp.name)
+    payload["filename"] = file.filename
+    return JSONResponse(payload)

@@ -242,6 +242,94 @@ table.features td:last-child {
   color: var(--muted);
 }
 
+/* --- разделитель «или проверить документ» --- */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 34px 0 18px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* --- блок загрузки документа --- */
+.doc .sub { margin: 0 0 12px; }
+
+input[type="file"] {
+  flex: 1 1 220px;
+  min-height: 48px;
+  padding: 11px 12px;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 7px 14px;
+  font: inherit;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#scanRun {
+  flex: 1 1 140px;
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+#scanRun:disabled { opacity: 0.6; cursor: default; }
+
+ul.summary { list-style: none; padding: 0; margin: 4px 0 0; }
+ul.summary li { margin: 6px 0; font-size: 0.92rem; }
+
+.chip {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 10px;
+  border: 1px solid currentColor;
+  font-size: 0.8rem;
+}
+.chip.verdict-ai { color: var(--ai); background: var(--ai-weak); }
+.chip.verdict-human { color: var(--human); background: var(--human-weak); }
+.chip.sum-uncertain { color: var(--warn-border); }
+.chip.sum-dim { color: var(--muted); }
+
+.downloads {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+.downloads button {
+  flex: 1 1 160px;
+  min-height: 44px;
+  padding: 0 16px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 footer {
   margin-top: 32px;
   font-size: 0.8rem;

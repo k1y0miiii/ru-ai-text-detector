@@ -5,10 +5,11 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-# Репозиторий и релиз, откуда берём веса v4. Поменяйте, если форкнули.
-REPO="k1y0miiii/ru-ai-text-detector"
-RELEASE_TAG="v1.0"
-V4_ASSET="v4_model.tar.gz"
+# HF Model-репо с весами ВСЕХ моделей (v1–v4), структурой models/. Поменяйте, если
+# форкнули. revision пиннится на конкретный коммит (воспроизводимость + защита от
+# подмены — калибраторы грузятся joblib.load).
+MODELS_REPO="k1y0mi/ru-ai-text-detector"
+MODELS_REV="175e75ec79e9471f3f5b4ab0da9b859188446807"
 
 # Зависимости (torch 2.4.1 / sklearn 1.5.2 / numpy 1.26.4) выпущены до Python 3.13
 # и не имеют под него колёс; модели models/*.joblib пиклены sklearn 1.5.2, так что
@@ -46,16 +47,15 @@ pip install --upgrade pip >/dev/null
 echo "[2/3] зависимости и пакет (editable)"
 pip install -e .
 
-echo "[3/3] боевая модель v4"
+echo "[3/3] модели v1–v4 из HF Model-репо -> models/"
+# Кладём ВСЕ модели в models/ той структурой, что ждут transformer_score.py / app.py /
+# CLI / TUI: models/v2_model models/v3_model models/v4_model models/model.joblib
+# models/threshold_*.json models/*_calibrator.joblib.
 if [ -f models/v4_model/model.safetensors ]; then
   echo "      уже на месте — пропускаю"
 else
-  mkdir -p models
-  URL="https://github.com/${REPO}/releases/download/${RELEASE_TAG}/${V4_ASSET}"
-  echo "      качаю ${URL}"
-  curl -L --fail -o "/tmp/${V4_ASSET}" "${URL}"
-  tar -xzf "/tmp/${V4_ASSET}" -C models/
-  rm -f "/tmp/${V4_ASSET}"
+  python -c "from huggingface_hub import snapshot_download; snapshot_download('${MODELS_REPO}', repo_type='model', revision='${MODELS_REV}', local_dir='models')"
+  rm -rf models/.cache
 fi
 # Модель перплексии для v1 (ai-forever/rugpt3small) transformers скачает сама
 # при первом запуске — отдельный шаг не нужен.

@@ -9,8 +9,8 @@
 <body>
   <div class="wrap">
     <header>
-      <h1>🔎 Детектор ИИ-текста</h1>
-      <p class="sub">Вставь текст на русском — оценим вероятность, что он написан ИИ.</p>
+      <h1>Детектор ИИ-текста</h1>
+      <p class="sub">Вставь текст или загрузи документ — оценим вероятность, что он написан ИИ.</p>
     </header>
 
     <div class="disclaimer">
@@ -52,6 +52,34 @@
         <table class="features"><tbody id="features"></tbody></table>
       </details>
     </div>
+
+    <div class="divider"><span>или проверить документ</span></div>
+
+    <section class="doc">
+      <p class="sub">Загрузи файл <code>.docx</code>, <code>.pdf</code> или <code>.txt</code> —
+        получишь поабзацную карту и отчёт для скачивания. Модель — из списка выше.</p>
+      <div class="controls">
+        <input type="file" id="docFile" accept=".txt,.docx,.pdf">
+        <button id="scanRun">Анализировать документ</button>
+      </div>
+
+      <div id="scanLoading" class="hidden">
+        <span class="spinner"></span>
+        <span>Разбираем документ и считаем по абзацам…</span>
+      </div>
+
+      <div id="scanError" class="hidden"></div>
+
+      <div id="scanResult" class="card hidden">
+        <div class="verdict" id="scanTitle"></div>
+        <div class="meta" id="scanMeta"></div>
+        <ul class="summary" id="scanSummary"></ul>
+        <div class="downloads">
+          <button id="dlHtml" type="button">Скачать отчёт (.html)</button>
+          <button id="dlMd" type="button">Скачать отчёт (.md)</button>
+        </div>
+      </div>
+    </section>
 
     <footer>
       Self-hosted, считается локально. Модель по умолчанию — <code>{{ default_model }}</code>.
